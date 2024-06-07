@@ -22,7 +22,7 @@ On Linux, everything is file! And the events do not escape the rule. But in whic
 ls -la /dev/input/
 ```
 
-###### Output
+**Output**
 
 ![Want to Create a Linux Keylogger Using Python? Here's How!](https://neoslab.com/uploads/medias/2020/02/want-to-create-a-linux-keylogger-using-python-here-s-how-1.png "Want to Create a Linux Keylogger Using Python? Here's How!")
 
@@ -81,7 +81,7 @@ Are you curious like me? Let's see what happens if we directly listen to the key
 cat /dev/input/event4
 ```
 
-###### Output
+**Output**
 
 ![Want to Create a Linux Keylogger Using Python? Here's How!](https://neoslab.com/uploads/medias/2020/02/want-to-create-a-linux-keylogger-using-python-here-s-how-3.png "Want to Create a Linux Keylogger Using Python? Here's How!")
 
