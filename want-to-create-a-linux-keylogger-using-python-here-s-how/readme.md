@@ -304,7 +304,7 @@ sudo python keylogger.py [email] [password] [smtp-server] [tls/notls] [buffer-si
 
 * * *
 
-### What Happen If We Turn Off The Computer?
+### Create a Persistence Mechanism
 
 If the user of the computer on which we installed keylogger off or reboot his machine, this will result in the deactivation of our keylogger. So we need a persistence mechanism, to enable our keylogger automatically every time the machine it's stopped or restarted.
 
@@ -331,6 +331,12 @@ sudo crontab -l
 ```
 To understand you have to know the syntax of cron: the numbers give the period when we start to execute the job (seconds, minutes, hours, days, days of the week, month, etc) and the command to execute follows, in our case, we run the keylogger every 6h.
 
-###### Credits
+* * *
+
+## Conclusion
+
+The keylogger records keystrokes made by users, but it’s essential to approach this knowledge responsibly and ethically. The provided Python script initializes an empty list to store pressed keys, and it captures both alphanumeric and special keys. Remember that using keyloggers without proper consent is unethical and potentially illegal. Always respect privacy and follow legal guidelines when exploring such tools.
+
+### Credits
 
 I wanted since a very long time to write an article on how to create a Python Keylogger working on Linux machine and I must honestly send all my thanks to [melkael](https://github.com/melkael) for his excellent work on the subject and the inspiration he gave me for the realization of this article. If you are french speaker I highly recommended you to read his article "[Comment créer un keylogger en moins de 20 minutes (Même quand on débute en Python)](https://maxou.io/comment-creer-keylogger-python/)"
