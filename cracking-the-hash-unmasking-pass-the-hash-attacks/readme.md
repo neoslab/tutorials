@@ -22,7 +22,7 @@ What must be understood here is that the user's plain text password never comes 
 
 * * *
 
-## Mimikatz and PTH
+### Mimikatz and PTH
 
 [Mimikatz](https://github.com/gentilkiwi/mimikatz) it's now well known to extract plaintexts passwords, hash, PIN code, and Kerberos tickets from memory. Mimikatz can also perform pass-the-hash, pass-the-ticket, or build Golden tickets.
 
@@ -55,7 +55,7 @@ We quickly understand that Mimikatz will create a new process then write in the 
 
 * * *
 
-## Over-Pass-The-Hash and Rubeus
+### Over-Pass-The-Hash and Rubeus
 
 As we have seen, the Mimikatz technique has limitations as well as poor OPSec. Let's see what solutions can bring us to an equivalent result while avoiding the limitations of Mimikatz.
 

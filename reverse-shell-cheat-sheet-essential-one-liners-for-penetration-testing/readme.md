@@ -4,7 +4,7 @@ In the realm of penetration testing, a reverse shell can be a crucial tool. If y
 
 * * *
 
-### Reverse Shell Techniques
+## Reverse Shell Techniques
 
 The options for creating a reverse shell are limited by the scripting languages installed on the target system. However, you could also upload a binary program if you’re well-prepared. The examples shown are tailored to Unix-like systems. Some of the examples should also work on Windows if you substitute “/bin/sh -i” with “cmd.exe”. Each method aims to be a one-liner that you can copy/paste. They’re quite short lines, but not very readable.
 
