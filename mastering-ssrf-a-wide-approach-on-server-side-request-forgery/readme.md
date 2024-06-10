@@ -1,4 +1,6 @@
-> Server Side Request Forgery also called SSRF, are web vulnerabilities that allow files to be read on the local server. They should not be confused with CSRF's (Cross-Site Request Forgery), which are intended to execute a request without the knowledge of another user. One of the big advantages of SSRF is the ability to bypass firewalls.
+## Introduction
+
+In the realm of cybersecurity, understanding vulnerabilities and how to exploit them is crucial. This article delves into the intricacies of Server Side Request Forgery (SSRF), a vulnerability that can be exploited to make a server perform requests on behalf of an attacker.
 
 Indeed, the actions being done on the server-side, it is possible to query services that are only available locally such as:
 
@@ -162,9 +164,6 @@ print("\n".join(ip_up))
 
 * * *
 
-###### Conclusion
+##  Conclusion
 
-Server-Side Request Forgery is an extremely lucrative vulnerability among the hackers, especially when your business infrastructure is on the cloud. To secure an application against SSRF's vulnerability, you will need to ensure that:
-
-- The protocol used to allow only HTTP and HTTPS query
-- The IP address linked to the requested URL must not be part of a private network
+Understanding SSRF and its potential for exploitation is vital for both attackers and defenders in the cybersecurity landscape. By comprehending the various bypass methods and exploitation techniques, one can better prepare and secure their systems against such threats.

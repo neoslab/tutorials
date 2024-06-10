@@ -1,3 +1,7 @@
+## Introduction
+
+In the realm of cybersecurity, **pass-the-hash** attacks have become a potent weapon for attackers. By leveraging password hashes, adversaries can bypass the need for plaintext passwords and gain unauthorized access to systems. In this tutorial, we’ll explore the mechanics of pass-the-hash attacks, from understanding hash structures to practical exploitation techniques. Buckle up as we delve into the dark corners of authentication security.
+
 > The **Pass-The-Hash** technique is an essential foundation of lateral movement on Windows. It allows you to assign the rights associated with a user based solely on their NT hash. However, this technique, which is commonly used by **Mimikatz**, is easily detectable. Besides, it requires requesting Local Administrator rights to write to the **LSASS.exe** process.
 
 In this article, we will briefly see how Pass-The-Hash works, and then analyze how Mimikatz's PTH (Pass-The-Hash) module works. Finally, we will see a technique offering better OPSec (Operation Security) and not requiring Local Administrator rights.
@@ -157,4 +161,4 @@ Thus, no capricious "patch" was made on LSASS.exe which allows us to keep better
 
 ## Conclusion
 
-We have seen an alternative technique to Mimikatz allowing us to have a session in the context of a user whose only NT hash is known. This technique is heavier but allows us to protect our OPSec. It is important to note that Rubeus is written in `C#` and therefore can be used directly by loading it into memory. Which is a powerful asset. Besides, being able to use this technique allows us to avoid an LPE (Local Privilege Escalation) which could be very verbose in the security logs.
+In summary, pass-the-hash attacks pose a significant threat to system security. As defenders, it’s crucial to stay informed about these techniques and implement robust measures to prevent them. Remember that protecting your organization’s credentials is not just about passwords; it’s about safeguarding the very keys to your digital kingdom.
