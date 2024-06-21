@@ -8,13 +8,13 @@ Ping Sweep is also known as ICMP sweep. You can use fping command for ping sweep
 
 ### How To Install Fping?
 
-#### Ubuntu / Debian and other derived distribution
+###### Ubuntu / Debian and other derived distribution
 
 ```html
 sudo apt install fping
 ```
 
-#### Redhat / Centos and other derived distribution
+###### Redhat / Centos and other derived distribution
 
 In **.rpm** distributions we can install **fping** from the source file using the below commands.
 
@@ -32,7 +32,7 @@ Or if you want **fping** to support IPv6 addresses follow next steps
 
 ### How To Use Fping?
 
-#### Check the current Fping version
+###### Check the current Fping version
 
 ```html
 fping -v
@@ -44,7 +44,7 @@ fping -v
 fping: Version 4.0fping: comments to david@schweikert.ch
 ```
 
-#### Ping Multiple hosts from command line
+###### Ping Multiple hosts from command line
 
 ```html
 fping 192.168.1.1 192.168.1.102 localhost 8.8.8.8 8.8.4.4
@@ -56,13 +56,13 @@ fping 192.168.1.1 192.168.1.102 localhost 8.8.8.8 8.8.4.4
 192.168.1.1 is alive192.168.1.102 is alivelocalhost is alive8.8.8.8 is alive8.8.4.4 is alive
 ```
 
-#### Ping Multiple hosts using file
+###### Ping Multiple hosts using file
 
 ```html
 fping < file.txt192.168.1.1 is alive192.168.1.102 is alive192.168.1.150 is unreachablelocalhost is alive192.168.147.2 is alive8.8.8.8 is alive8.8.4.4 is alive
 ```
 
-#### Ping IPs range from command line
+###### Ping IPs range from command line
 
 ```html
 fping -s -g 192.168.1.1 192.168.1.255
@@ -74,7 +74,7 @@ fping -s -g 192.168.1.1 192.168.1.255
 192.168.1.1 is alive192.168.1.102 is aliveICMP Host Unreachable from 192.168.1.102 for ICMP Echo sent to 192.168.1.2ICMP Host Unreachable from 192.168.1.102 for ICMP Echo sent to 192.168.1.3ICMP Host Unreachable from 192.168.1.102 for ICMP Echo sent to 192.168.1.4ICMP Host Unreachable from 192.168.1.102 for ICMP Echo sent to 192.168.1.5[...]192.168.1.1 is unreachable192.168.1.2 is unreachable192.168.1.3 is unreachable192.168.1.4 is unreachable192.168.1.5 is unreachable[...] 255 targets 2 alive 253 unreachable 0 unknown addresses 253 timeouts (waiting for a response) 1014 ICMP Echos sent 2 ICMP Echo Replies received 1008 other ICMP received 0.05 ms (min round trip time) 1.71 ms (avg round trip time) 3.37 ms (max round trip time) 12.003 sec (elapsed real time)
 ```
 
-#### Ping a complete Network
+###### Ping a complete Network
 
 Using the below command you can ping a complete network once using the option (**\-r 1**) within the parameters. As you can easily understand you can increase this value according to your specific needs.
 
@@ -88,7 +88,7 @@ fping -g -r 1 192.168.0.0/24
 
 Port scans and ping sweeps cannot be blocked without taking the risk to compromise the network capabilities. However, it's possible to block such requests without any difficulties at host levels. Ping sweeps can be stopped if **ICMP echo** and **echo-reply** are turned off.
 
-#### Blocking Ping Sweeps on Linux System
+###### Blocking Ping Sweeps on Linux System
 
 If you are using any **Linux** environment along with **iptables** you can easily block ping sweeps on every machine connected on the network adding into your **iptables** configuration the following rule:
 
@@ -96,7 +96,7 @@ If you are using any **Linux** environment along with **iptables** you can easil
 iptables -A OUTPUT -p icmp --icmp-type echo-request -j DROP
 ```
 
-#### Blocking Ping Sweeps on Windows System
+###### Blocking Ping Sweeps on Windows System
 
 On **Windows** machine it's also very easy to block ping sweeps but it's a little bit longer.
 
@@ -115,7 +115,6 @@ On **Windows** machine it's also very easy to block ping sweeps but it's a littl
 * * *
 
 ## Conclusion
-
 
 In this article, we explored how to conduct ping sweeps using Fping and enhance network security. By understanding the Fping command, checking the current version, and pinging multiple hosts, you can effectively identify live hosts within your network. Additionally, we discussed methods to block ping sweeps on both Linux and Windows systems.
 
